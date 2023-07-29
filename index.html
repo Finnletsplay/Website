@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html data-bs-theme="auto" lang="de">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<title>Home - Sylvia Putzke</title>
+	<meta property="og:type" content="website">
+	<meta name="description" content="Gutachter Dermatologie">
+	<script>
+	(function() {
+		// JavaScript snippet handling Dark/Light mode switching
+		const getStoredTheme = () => localStorage.getItem('theme');
+		const setStoredTheme = theme => localStorage.setItem('theme', theme);
+		const forcedTheme = document.documentElement.getAttribute('data-bss-forced-theme');
+		const getPreferredTheme = () => {
+			if(forcedTheme) return forcedTheme;
+			const storedTheme = getStoredTheme();
+			if(storedTheme) {
+				return storedTheme;
+			}
+			const pageTheme = document.documentElement.getAttribute('data-bs-theme');
+			if(pageTheme) {
+				return pageTheme;
+			}
+			return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+		}
+		const setTheme = theme => {
+			if(theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+				document.documentElement.setAttribute('data-bs-theme', 'dark');
+			} else {
+				document.documentElement.setAttribute('data-bs-theme', theme);
+			}
+		}
+		setTheme(getPreferredTheme());
+		const showActiveTheme = (theme, focus = false) => {
+			const themeSwitchers = [].slice.call(document.querySelectorAll('.theme-switcher'));
+			if(!themeSwitchers.length) return;
+			document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+				element.classList.remove('active');
+				element.setAttribute('aria-pressed', 'false');
+			});
+			for(const themeSwitcher of themeSwitchers) {
+				const btnToActivate = themeSwitcher.querySelector('[data-bs-theme-value="' + theme + '"]');
+				if(btnToActivate) {
+					btnToActivate.classList.add('active');
+					btnToActivate.setAttribute('aria-pressed', 'true');
+				}
+			}
+		}
+		window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+			const storedTheme = getStoredTheme();
+			if(storedTheme !== 'light' && storedTheme !== 'dark') {
+				setTheme(getPreferredTheme());
+			}
+		});
+		window.addEventListener('DOMContentLoaded', () => {
+			showActiveTheme(getPreferredTheme());
+			document.querySelectorAll('[data-bs-theme-value]').forEach(toggle => {
+				toggle.addEventListener('click', (e) => {
+					e.preventDefault();
+					const theme = toggle.getAttribute('data-bs-theme-value');
+					setStoredTheme(theme);
+					setTheme(theme);
+					showActiveTheme(theme);
+				})
+			})
+		});
+	})();
+	</script>
+	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/css/styles.min.css">
+</head>
+
+<body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="72">
+	<nav class="navbar navbar-expand-lg fixed-top bg-secondary text-uppercase navbar-light" id="mainNav" style="background: linear-gradient(180deg, rgb(106,174,255) 57%, rrgb(255,240,102)gb(24,188,156) 94%); border-bottom-style: none; border-bottom-color: var(--bs-navbar-disabled-color);">
+		<div class="container">
+			<a class="navbar-brand" href="#page-top"></a>
+			<button data-bs-toggle="collapse" data-bs-target="#navbarResponsive" class="navbar-toggler text-white bg-primary navbar-toggler-right text-uppercase rounded" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<h2 style="color: rgb(255,255,255);font-weight: bold;">Dermatologische Fachgutachten</h2>
+				<ul class="navbar-nav ms-auto">
+					<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Lebenslauf</a></li>
+					<li class="nav-item mx-0 mx-lg-1"></li>
+					<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Kontakt</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<header class="text-center text-white bg-primary masthead" style="background: rgb(24, 188, 156);--bs-primary: #18BC9C;--bs-primary-rgb: 24,188,156;">
+		<div class="container"><img class="img-fluid d-block mx-auto mb-5" src="assets/img/profile.png">
+			<h1>Dr. med. Sylvia Putzke</h1>
+			<hr class="star-light">
+			<header></header>
+			<h3 class="font-weight-light mb-0"></h3></div>
+		<h3>Fachärztin für Dermatologie, Allergologie, Phlebologie, Berufsdermatologie (ABD)</h3>
+		<header></header>
+	</header>
+	<section id="portfolio" class="portfolio">
+		<div class="container">
+			<h2 class="text-uppercase text-center text-secondary">Lebenslauf</h2>
+			<hr class="star-dark mb-5"><img class="img-fluid d-block mx-auto" src="assets/img/6bcd469e_1.png" style="display: block;overflow: visible;position: static;"><img class="img-fluid d-block mx-auto mb-5" src="assets/img/6bcd469e_2.png">
+			<div class="table-responsive">
+				<table class="table">
+					<thead>
+						<tr></tr>
+					</thead>
+					<tbody>
+						<tr></tr>
+						<tr></tr>
+					</tbody>
+				</table>
+			</div>
+			<ul class="list-group"></ul>
+		</div>
+	</section>
+	<section id="contact" style="background: rgb(255,247,175);">
+		<div class="container">
+			<h2 class="text-uppercase text-center text-secondary mb-0">Kontaktdaten</h2>
+			<hr class="star-light">
+			<div class="row">
+				<div class="col-lg-8 mx-auto">
+					<form id="contactForm" name="sentMessage">
+						<div class="control-group">
+							<div class="mb-0 form-floating controls pb-2"><small class="form-text text-danger help-block"></small>
+								<ul class="list-unstyled">
+									<li style="text-align: center;font-weight: bold;font-size: 24px;">Dr. med. Sylvia Putzke</li>
+									<li style="text-align: center;font-weight: bold;font-size: 24px;">Adresse:&nbsp; Franz-Berding-Weg 41</li>
+									<li style="font-size: 24px;text-align: center;font-weight: bold;"><strong>48165 Münster</strong></li>
+									<li style="font-size: 24px;"></li>
+									<li style="text-align: center;font-weight: bold;font-size: 24px;">Email:&nbsp; putzkes@yahoo.de</li>
+									<li style="text-align: center;font-weight: bold;font-size: 24px;">Telefon:&nbsp; 02501-9571412</li>
+								</ul>
+							</div>
+						</div>
+						<div class="control-group"></div>
+						<div class="control-group"></div>
+						<div class="control-group"></div>
+						<div id="success"></div>
+						<div></div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer class="text-center footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 col-xxl-12 mb-5 mb-lg-0">
+					<h4 class="text-uppercase mb-4">Standort</h4>
+					<p>Franz-Berding-Weg 41
+						<br>48165 Münster</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<div class="text-center text-white copyright py-4">
+		<div class="container"><small>Copyright ©&nbsp;Sylvia Putzke 2023</small></div>
+	</div>
+	<div class="d-lg-none scroll-to-top position-fixed rounded"><a class="text-center d-block rounded text-white" href="#page-top"><i class="fa fa-chevron-up"></i></a></div>
+	<div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-1">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
+				</div>
+				<div class="modal-body">
+					<div class="container text-center">
+						<div class="row">
+							<div class="col-lg-8 mx-auto">
+								<h2 class="text-uppercase text-secondary mb-0">Project Name</h2>
+								<hr class="star-dark mb-5"><img class="img-fluid mb-5" src="portfolio/cabin.png">
+								<p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer pb-5"><a class="btn btn-primary btn-lg mx-auto rounded-pill portfolio-modal-dismiss" role="button" data-bs-dismiss="modal"><i class="fa fa-close"></i>&nbsp;Close Project</a></div>
+			</div>
+		</div>
+	</div>
+	<div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-2">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
+				</div>
+				<div class="modal-body">
+					<div class="container text-center">
+						<div class="row">
+							<div class="col-lg-8 mx-auto">
+								<h2 class="text-uppercase text-secondary mb-0">Project Name</h2>
+								<hr class="star-dark mb-5"><img class="img-fluid mb-5" src="portfolio/cake.png">
+								<p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer pb-5"><a class="btn btn-primary btn-lg mx-auto rounded-pill portfolio-modal-dismiss" role="button" data-bs-dismiss="modal"><i class="fa fa-close"></i>&nbsp;Close Project</a></div>
+			</div>
+		</div>
+	</div>
+	<div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-3">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
+				</div>
+				<div class="modal-body">
+					<div class="container text-center">
+						<div class="row">
+							<div class="col-lg-8 mx-auto">
+								<h2 class="text-uppercase text-secondary mb-0">Project Name</h2>
+								<hr class="star-dark mb-5"><img class="img-fluid mb-5" src="portfolio/circus.png">
+								<p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer pb-5"><a class="btn btn-primary btn-lg mx-auto rounded-pill portfolio-modal-dismiss" role="button" data-bs-dismiss="modal"><i class="fa fa-close"></i>&nbsp;Close Project</a></div>
+			</div>
+		</div>
+	</div>
+	<div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-4">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
+				</div>
+				<div class="modal-body">
+					<div class="container text-center">
+						<div class="row">
+							<div class="col-lg-8 mx-auto">
+								<h2 class="text-uppercase text-secondary mb-0">Project Name</h2>
+								<hr class="star-dark mb-5"><img class="img-fluid mb-5" src="portfolio/game.png">
+								<p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer pb-5"><a class="btn btn-primary btn-lg mx-auto rounded-pill portfolio-modal-dismiss" role="button" data-bs-dismiss="modal"><i class="fa fa-close"></i>&nbsp;Close Project</a></div>
+			</div>
+		</div>
+	</div>
+	<div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-5">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
+				</div>
+				<div class="modal-body">
+					<div class="container text-center">
+						<div class="row">
+							<div class="col-lg-8 mx-auto">
+								<h2 class="text-uppercase text-secondary mb-0">Project Name</h2>
+								<hr class="star-dark mb-5"><img class="img-fluid mb-5" src="portfolio/safe.png">
+								<p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer pb-5"><a class="btn btn-primary btn-lg mx-auto rounded-pill portfolio-modal-dismiss" role="button" data-bs-dismiss="modal"><i class="fa fa-close"></i>&nbsp;Close Project</a></div>
+			</div>
+		</div>
+	</div>
+	<div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-6">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
+				</div>
+				<div class="modal-body">
+					<div class="container text-center">
+						<div class="row">
+							<div class="col-lg-8 mx-auto">
+								<h2 class="text-uppercase text-secondary mb-0">Project Name</h2>
+								<hr class="star-dark mb-5"><img class="img-fluid mb-5" src="portfolio/submarine.png">
+								<p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer pb-5"><a class="btn btn-primary btn-lg mx-auto rounded-pill portfolio-modal-dismiss" role="button" data-bs-dismiss="modal"><i class="fa fa-close"></i>&nbsp;Close Project</a></div>
+			</div>
+		</div>
+	</div>
+	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+	<script src="assets/js/script.min.js"></script>
+</body>
+
+</html>
